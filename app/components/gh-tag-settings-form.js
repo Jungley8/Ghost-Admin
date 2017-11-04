@@ -30,9 +30,9 @@ export default Component.extend({
 
     title: computed('tag.isNew', function () {
         if (this.get('tag.isNew')) {
-            return 'New Tag';
+            return '新建标签';
         } else {
-            return 'Tag Settings';
+            return '标签设置';
         }
     }),
 

@@ -1,10 +1,10 @@
 <section class="gh-canvas">
     <header class="gh-canvas-header">
-        <h2 class="gh-canvas-title" data-test-screen-title>Apps</h2>
+        <h2 class="gh-canvas-title" data-test-screen-title>应用</h2>
     </header>
 
     <section class="apps-grid-container">
-        <span class="apps-grid-title">Available integrations</span>
+        <span class="apps-grid-title">可用集成</span>
         <div class="apps-grid">
             <div class="apps-grid-cell" data-test-app="slack">
                 {{#link-to "settings.apps.slack" data-test-link="slack"}}
@@ -19,9 +19,9 @@
                     <div class="gh-card-right">
                         <div class="apps-configured">
                             {{#if settings.slack.isActive}}
-                                <span class="green" data-test-app-status>Active</span>
+                                <span class="green" data-test-app-status>激活</span>
                             {{else}}
-                                <span data-test-app-status>Configure</span>
+                                <span data-test-app-status>配置</span>
                             {{/if}}
                             {{inline-svg "arrow-right"}}
                         </div>
@@ -43,9 +43,9 @@
                     <div class="gh-card-right">
                         <div class="apps-configured">
                             {{#if settings.amp}}
-                                <span class="green" data-test-app-status>Active</span>
+                                <span class="green" data-test-app-status>激活</span>
                             {{else}}
-                                <span data-test-app-status>Configure</span>
+                                <span data-test-app-status>配置</span>
                             {{/if}}
                             {{inline-svg "arrow-right"}}
                         </div>
@@ -67,9 +67,9 @@
                     <div class="gh-card-right">
                         <div class="apps-configured">
                             {{#if settings.unsplash.isActive}}
-                                <span class="green" data-test-app-status>Active</span>
+                                <span class="green" data-test-app-status>激活</span>
                             {{else}}
-                                <span data-test-app-status>Configure</span>
+                                <span data-test-app-status>配置</span>
                             {{/if}}
                             {{inline-svg "arrow-right"}}
                         </div>

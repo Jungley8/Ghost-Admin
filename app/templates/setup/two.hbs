@@ -1,5 +1,5 @@
 <header>
-    <h1>Create your account</h1>
+    <h1>创建用户</h1>
 </header>
 
 <form id="setup" class="gh-flow-create">
@@ -10,14 +10,14 @@
     {{gh-profile-image email=email setImage=(action "setImage")}}
 
     {{#gh-form-group errors=errors hasValidated=hasValidated property="blogTitle"}}
-        <label for="blog-title">Blog title</label>
+        <label for="blog-title">博客标题</label>
         <span class="gh-input-icon gh-icon-content">
             {{inline-svg "content"}}
             {{gh-trim-focus-input blogTitle
                 tabindex="1"
                 type="text"
                 name="blog-title"
-                placeholder="Eg. The Daily Awesome"
+                placeholder="如：美好的一天"
                 autocorrect="off"
                 focusOut=(action "preValidate" "blogTitle")
                 update=(action (mut blogTitle))
@@ -27,7 +27,7 @@
     {{/gh-form-group}}
 
     {{#gh-form-group errors=errors hasValidated=hasValidated property="name"}}
-        <label for="name">Full name</label>
+        <label for="name">全名</label>
         <span class="gh-input-icon gh-icon-user">
             {{inline-svg "user-circle"}}
             {{gh-input name
@@ -44,7 +44,7 @@
     {{/gh-form-group}}
 
     {{#gh-form-group errors=errors hasValidated=hasValidated property="email"}}
-        <label for="email">Email address</label>
+        <label for="email">Email 地址</label>
         <span class="gh-input-icon gh-icon-mail">
             {{inline-svg "email"}}
             {{gh-input email
@@ -61,14 +61,14 @@
     {{/gh-form-group}}
 
     {{#gh-form-group errors=errors hasValidated=hasValidated property="password"}}
-        <label for="password">Password</label>
+        <label for="password">密码</label>
         <span class="gh-input-icon gh-icon-lock">
             {{inline-svg "lock"}}
             {{gh-input password
                 tabindex="4"
                 type="password"
                 name="password"
-                placeholder="At least 10 characters"
+                placeholder="至少10个字符"
                 autocorrect="off"
                 focusOut=(action "preValidate" "password")
                 update=(action (mut password))
@@ -87,7 +87,7 @@
         {{#if task.isRunning}}
             <span>{{inline-svg "spinner" class="gh-icon-spinner gh-btn-icon-no-margin"}}</span>
         {{else}}
-            <span>Last step: Invite your team {{inline-svg "arrow-right-small" class="gh-btn-icon-right"}}</span>
+            <span>最后一步: 邀请你的团队 {{inline-svg "arrow-right-small" class="gh-btn-icon-right"}}</span>
         {{/if}}
     {{/gh-task-button}}
 </form>

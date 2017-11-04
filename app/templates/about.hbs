@@ -7,10 +7,10 @@
 
         <section class="gh-env-details">
             <ul class="gh-env-list">
-                <li class="gh-env-list-version"><strong>Version</strong> {{model.version}}</li>
-                <li><strong>Environment</strong> {{model.environment}}</li>
-                <li class="gh-env-list-database-type"><strong>Database</strong> {{model.database}}</li>
-                <li><strong>Mail</strong> {{#if model.mail}}{{model.mail}}{{else}}Native{{/if}}</li>
+                <li class="gh-env-list-version"><strong>版本</strong> {{model.version}}</li>
+                <li><strong>环境</strong> {{model.environment}}</li>
+                <li class="gh-env-list-database-type"><strong>数据库</strong> {{model.database}}</li>
+                <li><strong>邮箱</strong> {{#if model.mail}}{{model.mail}}{{else}}本地{{/if}}</li>
             </ul>
             <div class="gh-env-help">
                 <a class="gh-btn" href="https://help.ghost.org" target="_blank"><span>User Documentation</span></a>

@@ -1,13 +1,13 @@
 <header class="modal-header">
     <h1>Would you really like to delete all content from your blog?</h1>
 </header>
-<a class="close" href="" title="Close" {{action "closeModal"}}>{{inline-svg "close"}}<span class="hidden">Close</span></a>
+<a class="close" href="" title="关闭" {{action "closeModal"}}>{{inline-svg "close"}}<span class="hidden">关闭</span></a>
 
 <div class="modal-body">
-    <p>This is permanent! No backups, no restores, no magic undo button. We warned you, k?</p>
+    <p>这是永久性的没有备份, 没有恢复, 没有魔术的撤销按钮。我们警告过你了！</p>
 </div>
 
 <div class="modal-footer">
-    <button {{action "closeModal"}} class="gh-btn"><span>Cancel</span></button>
-    {{gh-task-button "Delete" successText="Deleted" task=deleteAll class="gh-btn gh-btn-red gh-btn-icon"}}
+    <button {{action "closeModal"}} class="gh-btn"><span>取消</span></button>
+    {{gh-task-button "删除" successText="已删除" task=deleteAll class="gh-btn gh-btn-red gh-btn-icon"}}
 </div>

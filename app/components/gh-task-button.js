@@ -30,13 +30,13 @@ const GhTaskButton = Component.extend({
 
     task: null,
     disabled: false,
-    buttonText: 'Save',
+    buttonText: '保存',
     runningText: reads('buttonText'),
     idleClass: '',
     runningClass: '',
-    successText: 'Saved',
+    successText: '已保存',
     successClass: 'gh-btn-green',
-    failureText: 'Retry',
+    failureText: '重试',
     failureClass: 'gh-btn-red',
 
     // hasRun is needed so that a newly rendered button does not show the last

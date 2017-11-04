@@ -1,13 +1,13 @@
 <header class="modal-header">
-    <h1>Are you sure you want to suspend this user?</h1>
+    <h1>准备禁用该用户吗?</h1>
 </header>
-<a class="close" href="" title="Close" {{action "closeModal"}}>{{inline-svg "close"}}<span class="hidden">Close</span></a>
+<a class="close" href="" title="关闭" {{action "closeModal"}}>{{inline-svg "close"}}<span class="hidden">关闭</span></a>
 
 <div class="modal-body">
-    <strong>WARNING:</strong> This user will no longer be able to log in but their posts will be kept.
+    <strong>警告:</strong> 该用户禁止登录，但文章会保留。
 </div>
 
 <div class="modal-footer">
-    <button {{action "closeModal"}} class="gh-btn"><span>Cancel</span></button>
-    {{gh-task-button "Suspend" successText="Suspended" task=suspendUser class="gh-btn gh-btn-red gh-btn-icon" data-test-modal-confirm=true}}
+    <button {{action "closeModal"}} class="gh-btn"><span>取消</span></button>
+    {{gh-task-button "禁用" successText="已禁用" task=suspendUser class="gh-btn gh-btn-red gh-btn-icon" data-test-modal-confirm=true}}
 </div>

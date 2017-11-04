@@ -65,7 +65,7 @@ export default ModalComponent.extend({
             }
 
             if (file.name.match(/^casper\.zip$/i)) {
-                return {errors: [{message: 'Sorry, the default Casper theme cannot be overwritten.<br>Please rename your zip file and try again.'}]};
+                return {errors: [{message: 'Sorry, 默认的 Casper 主题不能被覆盖.<br>请重命名 zip 文件后重试'}]};
             }
 
             if (!this._allowOverwrite && currentThemeNames.includes(themeName)) {

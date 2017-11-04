@@ -13,7 +13,7 @@
         </div>
         {{#if scheduleCountdown}}
             <time datetime="{{post.publishedAtUTC}}" class="gh-notification gh-notification-schedule" data-test-schedule-countdown>
-                Post will be published {{scheduleCountdown}}.
+                文章将发布于 {{scheduleCountdown}}.
             </time>
         {{/if}}
         <section class="view-actions">
@@ -37,7 +37,7 @@
     --}}
     {{#gh-markdown-editor
         tabindex="2"
-        placeholder="Begin writing your story..."
+        placeholder="开始写文章……"
         autofocus=shouldFocusEditor
         uploadedImageUrls=editor.uploadedImageUrls
         mobiledoc=(readonly model.scratch)
@@ -54,7 +54,7 @@
         <div class="gh-markdown-editor-pane">
             {{gh-textarea model.titleScratch
                 class="gh-editor-title"
-                placeholder="Post Title"
+                placeholder="文章标题"
                 tabindex="1"
                 autoExpand=".gh-markdown-editor-pane"
                 update=(action "updateTitle")
@@ -90,7 +90,7 @@
     {{#if editor.isDraggedOver}}
         <div class="drop-target gh-editor-drop-target">
             <div class="drop-target-message">
-                <h3>Drop image(s) here to upload</h3>
+                <h3>拖拽图片上传</h3>
             </div>
         </div>
     {{/if}}
@@ -108,18 +108,18 @@
             <div class="gh-editor-image-upload {{if upload.errors "-error"}}">
                 <div class="gh-editor-image-upload-content">
                     {{#if upload.errors}}
-                        <h3>Upload failed</h3>
+                        <h3>上传图片</h3>
 
                         {{#each upload.errors as |error|}}
                             <div class="failed">{{error.fileName}} - {{error.message}}</div>
                         {{/each}}
 
                         <button class="gh-btn gh-btn-grey gh-btn-icon" {{action upload.cancel}}>
-                            <span>{{inline-svg "close"}} Close</span>
+                            <span>{{inline-svg "close"}} 关闭</span>
                         </button>
                     {{else}}
 
-                        <h3>Uploading {{pluralize upload.files.length "image"}}...</h3>
+                        <h3>正在上传 {{pluralize upload.files.length "image"}}...</h3>
                         {{upload.progressBar}}
                     {{/if}}
                 </div>

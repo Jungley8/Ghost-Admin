@@ -62,7 +62,7 @@ export default Component.extend({
     description: computed('text', 'altText', function () {
         let altText = this.get('altText');
 
-        return this.get('text') || (altText ? `Upload image of "${altText}"` : 'Upload an image');
+        return this.get('text') || (altText ? `Upload image of "${altText}"` : '上传图片');
     }),
 
     progressStyle: computed('uploadPercentage', function () {
@@ -159,13 +159,13 @@ export default Component.extend({
             let validExtensions = this.get('extensions').join(', .').toUpperCase();
             validExtensions = `.${validExtensions}`;
 
-            message = `The image type you uploaded is not supported. Please use ${validExtensions}`;
+            message = `上传图片类型不支持，请使用 ${validExtensions}`;
         } else if (isRequestEntityTooLargeError(error)) {
-            message = 'The image you uploaded was larger than the maximum file size your server allows.';
+            message = '上传图片超出服务器允许上传的最大值';
         } else if (error.errors && !isBlank(error.errors[0].message)) {
             message = error.errors[0].message;
         } else {
-            message = 'Something went wrong :(';
+            message = '哪里出错了 :(';
         }
 
         this.set('failureMessage', message);

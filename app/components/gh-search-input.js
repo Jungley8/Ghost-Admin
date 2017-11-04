@@ -66,19 +66,19 @@ export default Component.extend({
         let groups = [];
 
         if (!isEmpty(this.get('posts'))) {
-            groups.pushObject({groupName: 'Stories', options: this.get('posts')});
+            groups.pushObject({groupName: '文章', options: this.get('posts')});
         }
 
         if (!isEmpty(this.get('pages'))) {
-            groups.pushObject({groupName: 'Pages', options: this.get('pages')});
+            groups.pushObject({groupName: '页面', options: this.get('pages')});
         }
 
         if (!isEmpty(this.get('users'))) {
-            groups.pushObject({groupName: 'Users', options: this.get('users')});
+            groups.pushObject({groupName: '用户', options: this.get('users')});
         }
 
         if (!isEmpty(this.get('tags'))) {
-            groups.pushObject({groupName: 'Tags', options: this.get('tags')});
+            groups.pushObject({groupName: '标签', options: this.get('tags')});
         }
 
         return groups;

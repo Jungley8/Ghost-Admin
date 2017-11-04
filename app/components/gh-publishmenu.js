@@ -32,11 +32,11 @@ export default Component.extend({
         let state = this.get('postState');
 
         if (state === 'published') {
-            return 'Update';
+            return '更新';
         } else if (state === 'scheduled') {
-            return 'Scheduled';
+            return '定时发布';
         } else {
-            return 'Publish';
+            return '发布';
         }
     }),
 
@@ -57,7 +57,7 @@ export default Component.extend({
             runningText = saveType === 'schedule' ? 'Rescheduling' : 'Unscheduling';
         }
 
-        return runningText || 'Publishing';
+        return runningText || '正在发布';
     }),
 
     runningText: null,
@@ -68,18 +68,18 @@ export default Component.extend({
         let buttonText;
 
         if (postState === 'draft') {
-            buttonText = saveType === 'publish' ? 'Publish' : 'Schedule';
+            buttonText = saveType === 'publish' ? '发布' : '定时发布';
         }
 
         if (postState === 'published') {
-            buttonText = saveType === 'publish' ? 'Update' : 'Unpublish';
+            buttonText = saveType === 'publish' ? '更新' : '取消发布';
         }
 
         if (postState === 'scheduled') {
-            buttonText = saveType === 'schedule' ? 'Reschedule' : 'Unschedule';
+            buttonText = saveType === 'schedule' ? '重新定时' : '取消定时';
         }
 
-        return buttonText || 'Publish';
+        return buttonText || '发布';
     }),
 
     successText: computed('_previousStatus', 'postState', function() {
@@ -88,15 +88,15 @@ export default Component.extend({
         let buttonText;
 
         if (previousStatus === 'draft') {
-            buttonText = postState === 'published' ? 'Published' : 'Scheduled';
+            buttonText = postState === 'published' ? '已发布' : '已定时';
         }
 
         if (previousStatus === 'published') {
-            buttonText = postState === 'draft' ? 'Unpublished' : 'Updated';
+            buttonText = postState === 'draft' ? '取消发布' : '已更新';
         }
 
         if (previousStatus === 'scheduled') {
-            buttonText = postState === 'draft' ? 'Unscheduled' : 'Rescheduled';
+            buttonText = postState === 'draft' ? '取消定时' : '已重新定时';
         }
 
         return buttonText;

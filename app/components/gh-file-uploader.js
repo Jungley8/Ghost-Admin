@@ -175,13 +175,13 @@ export default Component.extend({
         }
 
         if (isUnsupportedMediaTypeError(error)) {
-            message = 'The file type you uploaded is not supported.';
+            message = '上传文件类型不支持';
         } else if (isRequestEntityTooLargeError(error)) {
-            message = 'The file you uploaded was larger than the maximum file size your server allows.';
+            message = '上传文件超出服务器允许上传的最大值';
         } else if (error.errors && !isBlank(error.errors[0].message)) {
             message = htmlSafe(error.errors[0].message);
         } else {
-            message = 'Something went wrong :(';
+            message = '哪里出错了 :(';
         }
 
         this.set('failureMessage', message);

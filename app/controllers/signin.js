@@ -86,7 +86,7 @@ export default Controller.extend(ValidationEngine, {
                 .perform(authStrategy, [model.get('identification'), model.get('password')]);
 
         } catch (error) {
-            this.set('flowErrors', 'Please fill out the form to sign in.');
+            this.set('flowErrors', '请填写表格以登录。');
         }
     }).drop(),
 

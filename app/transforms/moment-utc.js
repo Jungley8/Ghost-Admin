@@ -1,6 +1,7 @@
 import Transform from 'ember-data/transform';
 import moment from 'moment';
-
+import zh from '../helpers/zh-cn';
+moment.updateLocale('en', zh);
 export default Transform.extend({
     deserialize(serialized) {
         if (serialized) {

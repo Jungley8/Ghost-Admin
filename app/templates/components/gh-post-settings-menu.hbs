@@ -2,31 +2,31 @@
     <div id="entry-controls">
         <div class="{{if isViewingSubview 'settings-menu-pane-out-left' 'settings-menu-pane-in'}} settings-menu settings-menu-pane">
             <div class="settings-menu-header">
-                <h4>Post Settings</h4>
+                <h4>文章设置</h4>
                 <button class="close settings-menu-header-action" {{action "closeMenus" target=ui}} data-test-close-settings-menu>
-                    {{inline-svg "close"}}<span class="hidden">Close</span>
+                    {{inline-svg "close"}}<span class="hidden">关闭</span>
                 </button>
             </div>
             <div class="settings-menu-content">
                 {{gh-image-uploader-with-preview
                     image=model.featureImage
-                    text="Upload post image"
+                    text="上传文章图片"
                     allowUnsplash=true
                     update=(action "setCoverImage")
                     remove=(action "clearCoverImage")
                 }}
                 <form>
                 <div class="form-group">
-                    <label for="url">Post URL</label>
+                    <label for="url">文章链接</label>
                     {{!-- new posts don't have a preview link --}}
                     {{#unless model.isNew}}
                         {{#if model.isPublished}}
                         <a class="post-view-link" target="_blank" href="{{model.absoluteUrl}}">
-                            View post {{inline-svg "external"}}
+                            查看文章 {{inline-svg "external"}}
                         </a>
                         {{else}}
                         <a class="post-view-link" target="_blank" href="{{model.previewUrl}}">
-                            Preview {{inline-svg "external"}}
+                            预览 {{inline-svg "external"}}
                         </a>
                         {{/if}}
                     {{/unless}}
@@ -46,9 +46,9 @@
 
                 <div class="form-group">
                     {{#if (or model.isDraft model.isPublished model.pastScheduledTime)}}
-                        <label>Publish Date</label>
+                        <label>发布时间</label>
                     {{else}}
-                        <label>Scheduled Date</label>
+                        <label>定时发布时间</label>
                         <p>Use the publish menu to re-schedule</p>
                     {{/if}}
                     {{gh-date-time-picker
@@ -66,12 +66,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="tag-input">Tags</label>
+                    <label for="tag-input">标签</label>
                     {{gh-psm-tags-input post=model triggerId="tag-input"}}
                 </div>
 
                 {{#gh-form-group errors=model.errors hasValidated=model.hasValidated property="customExcerpt"}}
-                    <label for="custom-excerpt">Excerpt</label>
+                    <label for="custom-excerpt">摘要</label>
                     {{gh-textarea customExcerptScratch
                         class="post-setting-custom-excerpt"
                         id="custom-excerpt"
@@ -85,7 +85,7 @@
 
                 {{#unless session.user.isAuthor}}
                 <div class="form-group for-select">
-                    <label for="author-list">Author</label>
+                    <label for="author-list">作者</label>
                     <span class="gh-input-icon gh-icon-user">
                         {{inline-svg "user-circle"}}
                         <span class="gh-select" tabindex="0">
@@ -107,28 +107,28 @@
                 <ul class="nav-list nav-list-block">
                     <li class="nav-list-item" {{action "showSubview" "meta-data"}} data-test-button="meta-data">
                         <button type="button">
-                            <b>Meta Data</b>
+                            <b>Meta 参数</b>
                             <span>Extra content for search engines</span>
                         </button>
                         {{inline-svg "arrow-right"}}
                     </li>
                     <li class="nav-list-item" {{action "showSubview" "twitter-data"}} data-test-button="twitter-data">
                         <button type="button">
-                            <b>Twitter Card</b>
+                            <b>Twitter 卡片</b>
                             <span>Customise structured data for Twitter</span>
                         </button>
                         {{inline-svg "arrow-right"}}
                     </li>
                     <li class="nav-list-item" {{action "showSubview" "facebook-data"}} data-test-button="facebook-data">
                         <button type="button">
-                            <b>Facebook Card</b>
+                            <b>Facebook 卡片</b>
                             <span>Customise Open Graph data</span>
                         </button>
                         {{inline-svg "arrow-right"}}
                     </li>
                     <li class="nav-list-item" {{action "showSubview" "codeinjection"}} data-test-button="codeinjection">
                         <button type="button">
-                            <b>Code Injection</b>
+                            <b>代码注入</b>
                             <span>Add styles/scripts to the header &amp; footer</span>
                         </button>
                         {{inline-svg "arrow-right"}}
@@ -145,7 +145,7 @@
                             data-test-checkbox="static-page"
                         }}
                         <span class="input-toggle-component"></span>
-                        <p>Turn this post into a page</p>
+                        <p>将文章转为页面</p>
                     </label>
 
                     <label class="checkbox" for="featured" {{action "toggleFeatured" bubbles="false"}}>
@@ -166,7 +166,7 @@
                     onTemplateSelect=(action (mut model.customTemplate))}}
 
                 {{#unless model.isNew}}
-                    <button type="button" class="gh-btn gh-btn-link gh-btn-icon settings-menu-delete-button" {{action "deletePost"}}><span>{{inline-svg "trash"}} Delete Post</span></button>
+                    <button type="button" class="gh-btn gh-btn-link gh-btn-icon settings-menu-delete-button" {{action "deletePost"}}><span>{{inline-svg "trash"}} 删除文章</span></button>
                 {{/unless}}
 
                 </form>
@@ -178,8 +178,8 @@
                 {{#if isViewingSubview}}
                     {{#if (eq subview "meta-data")}}
                         <div class="settings-menu-header subview">
-                            <button {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{inline-svg "arrow-left"}}<span class="hidden">Back</span></button>
-                            <h4>Meta Data</h4>
+                            <button {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{inline-svg "arrow-left"}}<span class="hidden">返回</span></button>
+                            <h4>Meta 参数</h4>
                             <div style="width:23px;"></div>
                         </div>
 
@@ -214,7 +214,7 @@
                                 {{/gh-form-group}}
 
                                 <div class="form-group">
-                                    <label>Search Engine Result Preview</label>
+                                    <label>搜索引擎结果预览</label>
                                     <div class="seo-preview">
                                         <div class="seo-preview-title">{{truncate seoTitle 70}}</div>
                                         <div class="seo-preview-link">{{truncate seoURL 70}}</div>
@@ -227,7 +227,7 @@
 
                     {{#if (eq subview "twitter-data")}}
                         <div class="settings-menu-header subview">
-                            <button {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{inline-svg "arrow-left"}}<span class="hidden">Back</span></button>
+                            <button {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{inline-svg "arrow-left"}}<span class="hidden">返回</span></button>
                             <h4>Twitter Card</h4>
                             <div style="width:23px;"></div>
                         </div>
@@ -271,7 +271,7 @@
                                 {{/gh-form-group}}
 
                                 <div class="form-group">
-                                    <label>Preview</label>
+                                    <label>预览</label>
                                     <div class="gh-twitter-preview">
                                         {{#if twitterImage}}
                                         <div class="gh-twitter-preview-image" style={{twitterImageStyle}}></div>
@@ -296,7 +296,7 @@
 
                     {{#if (eq subview "facebook-data")}}
                         <div class="settings-menu-header subview">
-                            <button {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{inline-svg "arrow-left"}}<span class="hidden">Back</span></button>
+                            <button {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{inline-svg "arrow-left"}}<span class="hidden">返回</span></button>
                             <h4>Facebook Card</h4>
                             <div style="width:23px;"></div>
                         </div>
@@ -364,8 +364,8 @@
 
                     {{#if (eq subview "codeinjection")}}
                         <div class="settings-menu-header subview">
-                            <button {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{inline-svg "arrow-left"}}<span class="hidden">Back</span></button>
-                            <h4>Code Injection</h4>
+                            <button {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{inline-svg "arrow-left"}}<span class="hidden">返回</span></button>
+                            <h4>代码注入</h4>
                             <div style="width:23px;"></div>
                         </div>
 

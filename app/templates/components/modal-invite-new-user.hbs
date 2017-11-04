@@ -1,12 +1,12 @@
 <header class="modal-header">
-    <h1>Invite a New User</h1>
+    <h1>邀请新用户</h1>
 </header>
-<a class="close" href="" title="Close" {{action "closeModal"}}>{{inline-svg "close"}}<span class="hidden">Close</span></a>
+<a class="close" href="" title="关闭" {{action "closeModal"}}>{{inline-svg "close"}}<span class="hidden">关闭</span></a>
 
 <div class="modal-body">
     <fieldset>
         {{#gh-form-group errors=errors hasValidated=hasValidated property="email"}}
-            <label for="new-user-email">Email Address</label>
+            <label for="new-user-email">Email 地址</label>
             {{gh-input
                 email
                 enter="sendInvite"
@@ -25,7 +25,7 @@
         {{/gh-form-group}}
 
         <div class="form-group for-select">
-            <label for="new-user-role">Role</label>
+            <label for="new-user-role">角色</label>
             <span class="gh-select" tabindex="0">
                 {{one-way-select
                     id="new-user-role"

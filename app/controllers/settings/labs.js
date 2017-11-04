@@ -21,7 +21,7 @@ export default Controller.extend({
     importSuccessful: false,
     showDeleteAllModal: false,
     submitting: false,
-    uploadButtonText: 'Import',
+    uploadButtonText: '导入',
 
     importMimeType: ['application/json', 'application/zip', 'application/x-zip-compressed'],
     jsonExtension: ['json'],
@@ -112,7 +112,7 @@ export default Controller.extend({
             let currentUserId = this.get('session.user.id');
             let dbUrl = this.get('ghostPaths.url').api('db');
 
-            this.set('uploadButtonText', 'Importing');
+            this.set('uploadButtonText', '导入中……');
             this.set('importErrors', null);
             this.set('importSuccessful', false);
 
@@ -147,7 +147,7 @@ export default Controller.extend({
                     this.set('session.user', store.findRecord('user', currentUserId));
 
                     // TODO: keep as notification, add link to view content
-                    notifications.showNotification('Import successful.', {key: 'import.upload.success'});
+                    notifications.showNotification('导入成功!', {key: 'import.upload.success'});
 
                     // reload settings
                     return this.get('settings').reload().then((settings) => {
@@ -164,7 +164,7 @@ export default Controller.extend({
                     this.set('importErrors', response.errors);
                 }
             }).finally(() => {
-                this.set('uploadButtonText', 'Import');
+                this.set('uploadButtonText', '导入');
             });
         },
 

@@ -1,7 +1,7 @@
 <header class="modal-header">
     <h1>Are you sure you want to delete this user?</h1>
 </header>
-<a class="close" href="" title="Close" {{action "closeModal"}}>{{inline-svg "close"}}<span class="hidden">Close</span></a>
+<a class="close" href="" title="关闭" {{action "closeModal"}}>{{inline-svg "close"}}<span class="hidden">关闭</span></a>
 
 <div class="modal-body">
     {{#if user.count.posts}}
@@ -12,6 +12,6 @@
 </div>
 
 <div class="modal-footer">
-    <button {{action "closeModal"}} class="gh-btn"><span>Cancel</span></button>
+    <button {{action "closeModal"}} class="gh-btn"><span>取消</span></button>
     {{gh-task-button "Delete" successText="Deleted" task=deleteUser class="gh-btn gh-btn-red gh-btn-icon"}}
 </div>

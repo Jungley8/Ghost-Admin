@@ -111,15 +111,15 @@ export default Component.extend(ShortcutsMixin, {
                     useCtrlOnMac: true
                 },
                 '|',
-                {
-                    name: 'spellcheck',
-                    action: () => {
-                        this._toggleSpellcheck();
-                    },
-                    className: 'fa fa-check',
-                    title: 'Spellcheck (Ctrl-Alt-S)',
-                    useCtrlOnMac: true
-                },
+                // {
+                //     name: 'spellcheck',
+                //     action: () => {
+                //         this._toggleSpellcheck();
+                //     },
+                //     className: 'fa fa-check',
+                //     title: 'Spellcheck (Ctrl-Alt-S)',
+                //     useCtrlOnMac: true
+                // },
                 {
                     name: 'hemingway',
                     action: () => {

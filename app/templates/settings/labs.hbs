@@ -1,15 +1,15 @@
 <section class="gh-canvas">
     <header class="gh-canvas-header">
-        <h2 class="gh-canvas-title" data-test-screen-title>Labs</h2>
+        <h2 class="gh-canvas-title" data-test-screen-title>实验室</h2>
     </header>
 
     <section class="view-container settings-debug">
         <p class="gh-box gh-box-info">{{inline-svg "idea"}}This is a testing ground for experimental features which aren't quite ready for primetime. They may change, break or inexplicably disappear at any time.</p>
 
-        <div class="gh-setting-header">Migration options</div>
+        <div class="gh-setting-header">迁移选项</div>
         <div class="gh-setting">
             <div class="gh-setting-content">
-                <div class="gh-setting-title">Import content</div>
+                <div class="gh-setting-title">导入内容</div>
                 <div class="gh-setting-desc">Import posts from another Ghost installation</div>
             </div>
             <div class="gh-setting-action">
@@ -31,7 +31,7 @@
                     {{#if importSuccessful}}
                         Import successful with warnings
                     {{else}}
-                        Import failed
+                        导入失败
                     {{/if}}
                 </div>
 
@@ -53,16 +53,16 @@
 
         <div class="gh-setting">
             <div class="gh-setting-content">
-                <div class="gh-setting-title">Export your content</div>
+                <div class="gh-setting-title">导出全部内容</div>
                 <div class="gh-setting-desc">Download all of your posts and settings in a single, glorious JSON file</div>
             </div>
             <div class="gh-setting-action">
-                <button type="button" class="gh-btn gh-btn-hover-blue" {{action "downloadFile" "db"}}><span>Export</span></button>
+                <button type="button" class="gh-btn gh-btn-hover-blue" {{action "downloadFile" "db"}}><span>导出</span></button>
             </div>
         </div>
         <div class="gh-setting">
             <div class="gh-setting-content">
-                <div class="gh-setting-title">Delete all content</div>
+                <div class="gh-setting-title">删除全部内容</div>
                 <div class="gh-setting-desc">Permanently delete all posts and tags from the database, a hard reset</div>
             </div>
             <div class="gh-setting-action">
@@ -70,21 +70,21 @@
             </div>
         </div>
 
-        <div class="gh-setting-header">Testing tools</div>
+        <div class="gh-setting-header">测试工具</div>
         <div class="gh-setting">
             <div class="gh-setting-content">
-                <div class="gh-setting-title">Test email configuration</div>
+                <div class="gh-setting-title">测试 email 配置</div>
                 <div class="gh-setting-desc">Send yourself a test email to make sure everything is working</div>
             </div>
             <div class="gh-setting-action">
-                {{gh-task-button "Send" successText="Sent" task=sendTestEmail class="gh-btn gh-btn-hover-blue gh-btn-icon"}}
+                {{gh-task-button "发送" successText="发送" task=sendTestEmail class="gh-btn gh-btn-hover-blue gh-btn-icon"}}
             </div>
         </div>
 
-        <div class="gh-setting-header">Beta features</div>
+        <div class="gh-setting-header">Beta 功能</div>
         <div class="gh-setting">
             <div class="gh-setting-content">
-                <div class="gh-setting-title">Public API</div>
+                <div class="gh-setting-title">公开 API</div>
                 <div class="gh-setting-desc">For full instructions, read the <a href="https://help.ghost.org/hc/en-us/articles/115000301672-Public-API-Beta">developer guide</a></div>
             </div>
             <div class="gh-setting-action">
@@ -93,7 +93,7 @@
         </div>
         <div class="gh-setting">
             <div class="gh-setting-content">
-                <div class="gh-setting-title">Night shift</div>
+                <div class="gh-setting-title">夜间模式</div>
                 <div class="gh-setting-desc">Swap Ghost admin's colours to a dark background which is easy on the eyes</div>
             </div>
             <div class="gh-setting-action">
@@ -102,7 +102,7 @@
         </div>
         <div class="gh-setting">
             <div class="gh-setting-content">
-                <div class="gh-setting-title">Subscribers</div>
+                <div class="gh-setting-title">订阅者</div>
                 <div class="gh-setting-desc">Collect email addresses from your readers, more info in <a href="https://help.ghost.org/hc/en-us/articles/224089787-Subscribers-Beta">the docs</a></div>
             </div>
             <div class="gh-setting-action">
@@ -138,9 +138,9 @@
                     >
                         <span>
                             {{#if redirectSuccess}}
-                                {{inline-svg "check-circle"}} Uploaded
+                                {{inline-svg "check-circle"}} 已上传
                             {{else if redirectFailure}}
-                                {{inline-svg "retry"}} Upload Failed
+                                {{inline-svg "retry"}} 上传失败
                             {{else}}
                                 Upload redirects JSON
                             {{/if}}
